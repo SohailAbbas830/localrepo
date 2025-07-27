@@ -1,1 +1,188 @@
-<h1>Hi this is local repo indix </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 1. Styled name top-left */
+    #name {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    /* 2. Navigation bar */
+    nav {
+      background-color: #3498db;
+      padding: 15px;
+      margin-top: 50px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+      font-style: italic;
+      color: #ecf0f1;
+    }
+
+    section {
+      padding: 30px;
+    }
+
+    /* 3. About Me */
+    #about img {
+      width: 120px;
+      border-radius: 50%;
+    }
+
+    /* 4. Skills */
+    .skill {
+      display: inline-block;
+      margin: 10px;
+      text-align: center;
+    }
+
+    .skill img {
+      width: 60px;
+      height: 60px;
+    }
+
+    /* 5. Projects */
+    .project {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 10px;
+    }
+
+    /* 6 & 7. Recommendations */
+    .recommendation {
+      background: #f0f0f0;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* 8. Home icon */
+    .home-icon {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      color: #2c3e50;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="name">👨‍💻 Sohail</div>
+  <a href="#top" class="home-icon"><i class="fa fa-home"></i></a>
+
+  <!-- 2. Navigation bar -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Project Details</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#recommendations">Recommendations</a></li>
+    </ul>
+  </nav>
+
+  <!-- 3. About Me -->
+  <section id="about">
+    <img src="https://via.placeholder.com/120" alt="Profile" />
+    <h2>Sohail Abbas</h2>
+    <p>I am a passionate web developer with interests in full-stack development, UI/UX, and emerging web technologies.</p>
+  </section>
+
+  <!-- 4. Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML" />
+      <p>HTML</p>
+    </div>
+    <div class="skill">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS" />
+      <p>CSS</p>
+    </div>
+    <div class="skill">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript" />
+      <p>JavaScript</p>
+    </div>
+  </section>
+
+  <!-- 5. Projects -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="project">
+      <h3>Portfolio Website</h3>
+      <p>A responsive and interactive personal portfolio site using HTML, CSS, and JavaScript.</p>
+    </div>
+    <div class="project">
+      <h3>Task Tracker App</h3>
+      <p>Built with JavaScript to add, update, and remove daily tasks from a browser-based app.</p>
+    </div>
+    <div class="project">
+      <h3>Weather Dashboard</h3>
+      <p>Uses APIs to show real-time weather for any city entered by the user. Styled using Tailwind CSS.</p>
+    </div>
+  </section>
+
+  <!-- 6. Recommendations -->
+  <section id="recommendations">
+    <h2>Recommendations</h2>
+    <div id="rec-list">
+      <div class="recommendation">"Sohail is a highly skilled developer who delivers clean code!" - Ali</div>
+      <div class="recommendation">"Great communication and excellent project quality." - Sara</div>
+      <div class="recommendation">"Truly professional and passionate about coding!" - Imran</div>
+    </div>
+
+    <!-- 7 & 9. Add recommendation form -->
+    <h3>Add a Recommendation</h3>
+    <textarea id="rec-input" rows="4" cols="50" placeholder="Write your recommendation here..."></textarea><br>
+    <button id="recommend-btn">Submit Recommendation</button>
+  </section>
+
+  <script>
+    // 7 & 9. Handle new recommendation submission
+    document.getElementById("recommend-btn").addEventListener("click", function () {
+      const input = document.getElementById("rec-input").value;
+      if (input.trim() !== "") {
+        const newDiv = document.createElement("div");
+        newDiv.className = "recommendation";
+        newDiv.textContent = `"${input}" - Anonymous`;
+        document.getElementById("rec-list").appendChild(newDiv);
+
+        alert("Thank you for your recommendation!"); // 10. Confirmation popup
+        document.getElementById("rec-input").value = "";
+      } else {
+        alert("Please enter a recommendation before submitting.");
+      }
+    });
+  </script>
+
+</body>
+</html>
